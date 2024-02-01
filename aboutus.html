@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="aboutus.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        .star {
+            position:fixed;
+            font-size: 20px; /* Initial size of the star */
+            opacity: 1;
+            transition: transform 2s ease-out, opacity 2s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-Toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+    
+
+
+<h1><big>Our Team</big></h1>
+
+
+<p1><big>Len-P!!</big></p1>
+
+<div class="image-container">
+    <img src="IMG_20240121_163125.jpg" alt="Image 1">
+</div>
+
+<p2>
+
+</p2>
+
+
+
+
+<p1><big>Nino</big></p1>
+
+<div class="image-container">
+
+    <img src="IMG_20240123_150306.jpg" alt="Image 3">
+</div>
+
+<p2>
+Hi I'm Nino!
+I'm starting my way into website software development.
+I really like the wii homebrew community, and other communities I like and follow are:
+Bonelab/Boneworks(stress level zero)
+Minecraft.
+My favourite wii game is wii party.
+Btw I hope you like riishop.
+</p2>
+
+
+
+
+
+<p1><big>actualjack!!</big></p1>
+
+<div class="image-container">
+   
+    <img src="IMG_0790.jpg" alt="Image 4">
+</div>
+
+<p2>
+
+</p2>
+
+
+<p1><big>Brewmasters</big></p1>
+
+<div class="image-container">
+   
+    <img src="IMG_20240122_204114.jpg" alt="Image 2">
+</div>
+
+<p2>
+
+</p2>
+
+
+
+
+
+
+
+
+
+</body>
+
+<script>
+  
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-Toggle');
+    
+        menuToggle.addEventListener('click', function () {
+            // Change the location when the menu icon is clicked
+            window.location.href = 'aboutus2.html';
+        });
+    });
+    
+   
+
+
+    const colors = ["rgb(0, 187, 249)", "rgb(0, 245, 212)", "rgb(252, 254, 255)"];
+
+    function selectRandom(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function createStar(mouseX, mouseY) {
+        const star = document.createElement('div');
+        star.className = "star";
+        star.innerHTML = '&#9733;'; // HTML character entity for a star
+        star.style.left = `${mouseX}px`;
+        star.style.top = `${mouseY}px`;
+        star.style.color = selectRandom(colors);
+        document.body.appendChild(star);
+
+        // Trigger reflow to apply initial styles before starting animations
+        star.offsetHeight;
+
+        // Apply falling animation
+        star.style.transform = 'translateY(0)';
+
+        // Apply scaling and fading
+        star.style.transform = 'translateY(100vh) scale(0)';
+        star.style.opacity = '0';
+
+        // Remove the star after scaling and fading
+        setTimeout(() => {
+            document.body.removeChild(star);
+        }, 500); // Adjust this value to control the total duration
+    }
+
+    window.onmousemove = e => {
+        createStar(e.clientX, e.clientY);
+    };
+</script>

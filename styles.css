@@ -1,0 +1,124 @@
+/* styles.css */
+@font-face {
+    font-family: 'RobotoMono'; /* Sostituisci con il nome che desideri assegnare al font */
+    src: url('RobotoMono-Light.ttf') format('truetype'); }
+
+    
+
+body {
+
+    margin: 0;
+    .custom-font { font-family: 'RobotoMono'
+    }
+    background-color: #acdadb;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+h1 {
+    color: #07a1c7;
+    font-size: 5em;
+    font-family: 'RobotoMono'
+
+}
+
+p {
+    color: #087a7a;
+    font-size: 2em;
+    font-family: 'RobotoMono'
+}
+
+p1 {
+    color: #73a0be;
+    font-size: 1.5em;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-family: 'RobotoMono'
+}
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+    padding: 15px;
+    transform: translate(1500%, -500%);
+
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin-bottom: 15px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+
+
+.content {
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    cursor: grab;
+    width: 100%;
+}
+
+.image-container img {
+    flex-shrink: 0;
+    width: 30vw;
+    height: 40vh;
+    object-fit: cover;
+    scroll-snap-align: start;
+    border-radius: 7%;
+}
+
+.image-container:active {
+    cursor: grabbing;
+}
+
+#image-track {
+    display: flex;
+    gap: 4vmin;
+}
+
+

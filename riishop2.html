@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="riishop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Your+Preferred+Font">
+    <style>
+        .star {
+            position: fixed;
+            font-size: 20px; /* Initial size of the star */
+            opacity: 1;
+            transition: transform 2s ease-out, opacity 2s ease-out;
+        }
+    </style>    
+    <h1>Riishop Wii Shop channel revival</h1>
+    <p>                      <big>Our team</big> </p>
+  
+</head>
+<body>
+
+    <div class="menu-toggle" id="menuToggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    
+    <div class="menu" id="menu">
+        <img src="Trollface.png" alt="Menu Image">
+        <ul>
+            <li><a href="riishop.html">Home</a>
+            <li><a href="#">links</a>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    
+   
+
+    <div class="image-container">
+        <img src="IMG_0790.jpg" alt="Image 1">
+        <img src="IMG_20240121_163125.jpg" alt="Image 2">
+        <img src="IMG_20240122_204114.jpg" alt="Image 3">
+        <img src="IMG_20240123_150306.jpg" alt="Image 4">
+        <img src="image5.png" alt="Image 5">
+        <!-- Add more images as needed -->
+    </div>
+   
+   
+    <p1><big>Riishop is a fan made homebrew replacement, for the long dead wii shop channel.
+        We are reviving the Wii shop channel to make you relieve your fantastic memories
+        that you had with the original.
+        Just like the old times.
+        Here you'll find the download and all our social media pages!
+    </big></p1>
+
+  
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', function () {
+            menu.classList.toggle('show');
+            // Change the location when the menu is toggled
+            window.location.href = 'riishop2.html';
+        });
+    });
+
+
+
+    const colors = ["rgb(0, 187, 249)", "rgb(0, 245, 212)", "rgb(252, 254, 255)"];
+
+    function selectRandom(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function createStar(mouseX, mouseY) {
+        const star = document.createElement('div');
+        star.className = "star";
+        star.innerHTML = '&#9733;'; // HTML character entity for a star
+        star.style.left = `${mouseX}px`;
+        star.style.top = `${mouseY}px`;
+        star.style.color = selectRandom(colors);
+        document.body.appendChild(star);
+
+        // Trigger reflow to apply initial styles before starting animations
+        star.offsetHeight;
+
+        // Apply falling animation
+        star.style.transform = 'translateY(0)';
+
+        // Apply scaling and fading
+        star.style.transform = 'translateY(100vh) scale(0)';
+        star.style.opacity = '0';
+
+        // Remove the star after scaling and fading
+        setTimeout(() => {
+            document.body.removeChild(star);
+        }, 500); // Adjust this value to control the total duration
+    }
+
+    window.onmousemove = e => {
+        createStar(e.clientX, e.clientY);
+    };
+</script>
+
+</html>
